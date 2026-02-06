@@ -1,0 +1,42 @@
+[package]
+name = "transr"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "transR"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module", "abi3-py38"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+chrono = "0.4"
+sha2 = "0.10"
+# md5 = "0.7"
+md-5 = "0.10.0"
+blake3 = "1.5"
+hex = "0.4"
+rand = "0.8"
+rayon = "1.8"
+tokio = { version = "1.35", features = ["full"] }
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+sysinfo = "0.30"
+regex = "1.10"
+base64 = "0.21"
+flate2 = "1.0"
+aes = "0.8"
+num-bigint = "0.4"
+num-traits = "0.2"
+crossbeam = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = true
