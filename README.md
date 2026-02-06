@@ -80,7 +80,7 @@ pip install maturin
 ### Build & Install
 ```bash
 # Clone repository
-git clone <repo-url>
+git clone https://github.com/MeowTux/Transr
 cd transR-project
 
 # Build dengan maturin
